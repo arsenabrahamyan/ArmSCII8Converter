@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Module1" script:language="StarBasic">REM  *****  BASIC  *****
+
+Sub Unicode
+	oDoc = thisComponent 
+	     aFind = Array(&quot;²&quot;, &quot;³&quot;, &quot;´&quot;, &quot;µ&quot;, &quot;¶&quot;, &quot;·&quot;, &quot;¸&quot;, &quot;¹&quot;, &quot;º&quot;, &quot;»&quot;, &quot;¼&quot;, &quot;½&quot;, &quot;¾&quot;, &quot;¿&quot;, &quot;À&quot;, &quot;Á&quot;, &quot;Â&quot;, &quot;Ã&quot;, &quot;Ä&quot;, &quot;Å&quot;, &quot;Æ&quot;, &quot;Ç&quot;, &quot;È&quot;, &quot;É&quot;, &quot;Ê&quot;, &quot;Ë&quot;, &quot;Ì&quot;, &quot;Í&quot;, &quot;Î&quot;, &quot;Ï&quot;, &quot;Ð&quot;, &quot;Ñ&quot;, &quot;Ò&quot;, &quot;Ó&quot;, &quot;Ô&quot;, &quot;Õ&quot;, &quot;Ö&quot;, &quot;×&quot;, &quot;Ø&quot;, &quot;Ù&quot;, &quot;Ú&quot;, &quot;Û&quot;, &quot;Ü&quot;, &quot;Ý&quot;, &quot;Þ&quot;, &quot;ß&quot;, &quot;à&quot;, &quot;á&quot;, &quot;â&quot;, &quot;ã&quot;, &quot;ä&quot;, &quot;å&quot;, &quot;æ&quot;, &quot;ç&quot;, &quot;è&quot;, &quot;é&quot;, &quot;ê&quot;, &quot;ë&quot;, &quot;ì&quot;, &quot;í&quot;, &quot;î&quot;, &quot;ï&quot;, &quot;ð&quot;, &quot;ñ&quot;, &quot;ò&quot;, &quot;ó&quot;, &quot;à&quot;, &quot;ô&quot;, &quot;á&quot;, &quot;õ&quot;, &quot;ö&quot;, &quot;÷&quot;, &quot;ø&quot;, &quot;ù&quot;, &quot;¨&quot;, &quot;ú&quot;, &quot;û&quot;, &quot;ü&quot;, &quot;ý&quot;, &quot;±&quot;, &quot;£&quot;, &quot;«&quot;, &quot;ª&quot;, &quot;§&quot;, &quot;¦&quot;, &quot;°&quot;, &quot;¯&quot;, &quot;®&quot;, &quot;&apos;&quot;) 
+	  aReplace = Array(&quot;Ա&quot;, &quot;ա&quot;, &quot;Բ&quot;, &quot;բ&quot;, &quot;Գ&quot;, &quot;գ&quot;, &quot;Դ&quot;, &quot;դ&quot;, &quot;Ե&quot;, &quot;ե&quot;, &quot;Զ&quot;, &quot;զ&quot;, &quot;Է&quot;, &quot;է&quot;, &quot;Ը&quot;, &quot;ը&quot;, &quot;Թ&quot;, &quot;թ&quot;, &quot;Ժ&quot;, &quot;ժ&quot;, &quot;Ի&quot;, &quot;ի&quot;, &quot;Լ&quot;, &quot;լ&quot;, &quot;Խ&quot;, &quot;խ&quot;, &quot;Ծ&quot;, &quot;ծ&quot;, &quot;Կ&quot;, &quot;կ&quot;, &quot;Հ&quot;, &quot;հ&quot;, &quot;Ձ&quot;, &quot;ձ&quot;, &quot;Ղ&quot;, &quot;ղ&quot;, &quot;Ճ&quot;, &quot;ճ&quot;, &quot;Մ&quot;, &quot;մ&quot;, &quot;Յ&quot;, &quot;յ&quot;, &quot;Ն&quot;, &quot;ն&quot;, &quot;Շ&quot;, &quot;շ&quot;, &quot;Ո&quot;, &quot;ո&quot;, &quot;Չ&quot;, &quot;չ&quot;, &quot;Պ&quot;, &quot;պ&quot;, &quot;Ջ&quot;, &quot;ջ&quot;, &quot;Ռ&quot;, &quot;ռ&quot;, &quot;Ս&quot;, &quot;ս&quot;, &quot;Վ&quot;, &quot;վ&quot;, &quot;Տ&quot;, &quot;տ&quot;, &quot;Ր&quot;, &quot;ր&quot;, &quot;Ց&quot;, &quot;ց&quot;, &quot;Ո&quot;, &quot;Ւ&quot;, &quot;ո&quot;, &quot;ւ&quot;, &quot;Փ&quot;, &quot;փ&quot;, &quot;Ք&quot;, &quot;ք&quot;, &quot;և&quot;, &quot;Օ&quot;, &quot;օ&quot;, &quot;Ֆ&quot;, &quot;ֆ&quot;, &quot;՞&quot;, &quot;։&quot;, &quot;,&quot;, &quot;՝&quot;, &quot;«&quot;, &quot;»&quot;, &quot;՛&quot;, &quot;՜&quot;, &quot;…&quot;, &quot;՚&quot;) 
+	aRayCount = 0 
+	FandR = oDoc.createReplaceDescriptor
+	FandR.SearchCaseSensitive = true
+	While aRayCount &lt;= uBound(aFind) 
+		FandR.setSearchString(aFind(aRayCount)) 
+		FandR.setReplaceString(aReplace(aRayCount)) 
+		aRayCount = aRayCount + 1 
+		oDoc.ReplaceAll(FandR) 
+	Wend 
+End Sub
+</script:module>
